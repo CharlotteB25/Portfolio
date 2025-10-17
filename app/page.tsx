@@ -45,7 +45,7 @@ export default function Home() {
 
             {/* Balanced About Me */}
             <p className="text-ink-700 text-lg max-w-2xl pt-6 leading-relaxed">
-              I’m Charlotte — a recent graduate in fullstack development with
+              Hi, I’m Charlotte a recent graduate in fullstack development with
               experience in frontend design and backend development. Growing up
               across five countries taught me adaptability, creativity, and
               strong collaboration in international teams. I’m passionate about
@@ -92,16 +92,33 @@ export default function Home() {
       </section>
 
       {/* featured strip */}
-      <section className="">
-        <div className="wave-card rounded-3xl mt-20 px-6 py-4 flex items-center justify-between flex-wrap ">
-          <p className="text-ink-700">
+      <section>
+        <div
+          className="
+      wave-card rounded-3xl mt-20
+      px-8 py-8 sm:px-10 sm:py-6
+      flex flex-col sm:flex-row
+      items-center sm:items-center
+      justify-center sm:justify-between
+      text-center sm:text-left
+      gap-5
+    "
+        >
+          <p className="text-ink-700 text-base sm:text-[1rem] leading-relaxed">
             Latest: migrated an ecommerce site from{" "}
             <span className="text-marigold font-semibold">
               Squarespace → WordPress
             </span>{" "}
             and polished a command palette.
           </p>
-          <Link href="/projects" className="btn">
+
+          <Link
+            href="/projects"
+            className="
+        btn mt-2 sm:mt-0
+        self-center sm:self-auto
+      "
+          >
             Browse work →
           </Link>
         </div>
@@ -109,41 +126,50 @@ export default function Home() {
 
       {/* WORK GRID — staggered & bold */}
       <section id="projects" className="section space-y-8">
-        <div className="flex items-end justify-between">
+        <div
+          className="
+      flex flex-col sm:flex-row
+      items-start sm:items-end
+      justify-between
+      gap-3 sm:gap-0
+    "
+        >
           <h2 className="title text-3xl text-ink-700 mt-10">
             Selected Projects
           </h2>
-          <Link href="/projects" className="link-underline text-marigold">
+          <Link
+            href="/projects"
+            className="
+        inline-flex items-center justify-center
+        px-4 py-2 sm:px-5 sm:py-2.5
+        rounded-full border-2 border-marigold/70
+        text-marigold font-semibold text-sm sm:text-base
+        hover:bg-marigold hover:text-ink
+        transition-all duration-300 ease-out
+        shadow-sm hover:shadow-md
+      "
+          >
             See all
           </Link>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6">
-          {projects[0] && (
-            <div className="lg:col-span-7">
-              <div className="">
-                <div className="rounded-2xl overflow-hidden border-marigold">
-                  <ProjectCard project={projects[0]} />
-                </div>
-              </div>
-            </div>
-          )}
-
-          {projects.slice(1, 3).map((p, i) => (
-            <div key={i} className="lg:col-span-5">
-              <div className="">
-                <div className="rounded-2xl overflow-hidden border-blood">
-                  <ProjectCard project={p} />
-                </div>
-              </div>
-            </div>
-          ))}
-
-          {projects.slice(3).map((p, i) => (
-            <div key={i} className="lg:col-span-7">
-              <div className=""></div>
-              <div className="rounded-2xl overflow-hidden border-blood">
-                <ProjectCard project={p} />
+          {/* Show only the first 4 projects */}
+          {projects.slice(0, 4).map((project, i) => (
+            <div
+              key={i}
+              className={
+                i === 0
+                  ? "lg:col-span-7"
+                  : i === 1
+                  ? "lg:col-span-5"
+                  : i === 2
+                  ? "lg:col-span-5"
+                  : "lg:col-span-7"
+              }
+            >
+              <div className="rounded-2xl overflow-hidden border-marigold">
+                <ProjectCard project={project} />
               </div>
             </div>
           ))}
@@ -155,7 +181,7 @@ export default function Home() {
         <div className="flex items-end justify-between">
           <h2 className="title text-3xl text-ink-700 mt-10">Résumé Snapshot</h2>
           <a
-            href="/resume.pdf"
+            href="/CV/Resume-CharlotteBilliet - Fullstack.pdf"
             className="btn"
             aria-label="Download résumé as PDF"
           >
@@ -170,7 +196,7 @@ export default function Home() {
               <h3 className="title text-2xl text-ink-700">Education</h3>
               <ul className="mt-4 space-y-4 text-sm">
                 <li>
-                  <div className="font-semibold text-ink-700">
+                  <div className=" text-marigold-500 mb-1">
                     Graphic & Digital Media — Interactive Media Development
                   </div>
                   <div className="text-pearl-900">
@@ -178,7 +204,7 @@ export default function Home() {
                   </div>
                 </li>
                 <li>
-                  <div className="font-semibold text-ink-700">IB Diploma</div>
+                  <div className=" text-marigold-500 mb-1">IB Diploma</div>
                   <div className="text-pearl-900">
                     United World College South East Asia (Dover, Singapore) —
                     2019

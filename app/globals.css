@@ -96,10 +96,10 @@ body {
       ),
     radial-gradient(
       900px 460px at 86% 74%,
-      rgb(var(--citrine) / 0.36),
+      rgb(var(--police) / 0.2),
       transparent 74%
     ),
-    rgb(252 247 238); /* paper */
+    rgb(254, 237, 206); /* paper */
 
   /* heavy layers fixed; puddle tile can scroll */
   background-attachment: fixed, fixed, scroll, fixed, fixed, fixed, fixed, fixed,

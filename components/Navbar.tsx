@@ -42,7 +42,7 @@ export function Navbar() {
           className="flex items-center"
           aria-label="Charlotte Billiet"
         >
-          <div className="h-12 rounded-full overflow-hidden ">
+          <div className="h-11 w-11 rounded-full overflow-hidden ">
             <img
               src="/brand/CB-title-logo.png"
               alt="Charlotte Billiet monogram"
@@ -66,26 +66,38 @@ export function Navbar() {
             aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
             className="sm:hidden inline-flex items-center justify-center rounded-xl p-2
-                       border border-marigold/60 hover:bg-marigold/20 text-marigold
+                       border-2 border-marigold/60 hover:bg-marigold/20 text-marigold
                        focus:outline-none focus:ring-2 focus:ring-marigold/60"
           >
             {!open ? (
               <svg
-                className="h-5 w-5"
+                className="h-4 w-4"
                 viewBox="0 0 24 24"
-                fill="currentColor"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 aria-hidden="true"
               >
-                <path d="M3 6h18M3 12h18M3 18h18" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
               </svg>
             ) : (
               <svg
-                className="h-5 w-5"
+                className="h-4 w-4"
                 viewBox="0 0 24 24"
-                fill="currentColor"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
                 aria-hidden="true"
               >
-                <path d="M6 18L18 6M6 6l12 12" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />{" "}
               </svg>
             )}
           </button>

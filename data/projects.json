@@ -1,17 +1,20 @@
 [
   {
-    "title": "Travel Planner App",
-    "year": 2024,
-    "summary": "Real-time travel app with OpenWeather API and caching.",
-    "tags": ["React", "API", "Tailwind"],
-    "demo": "https://travel-app-1-bzyp.onrender.com",
-    "repo": "https://github.com/CharlotteB25/travel-app"
-  },
-  {
     "title": "3D interactive game",
     "year": 2025,
     "summary": "Immersive 3D game built with Three.js and WebGL.",
-    "tags": ["Three.js", "WebGL", "CSS"],
+    "tags": [
+      "Three.js",
+      "WebGL",
+      "React",
+      "TypeScript",
+      "glTF",
+      "Blender",
+      "3D Modeling",
+      "HTML",
+      "CSS",
+      "Vercel"
+    ],
     "demo": "https://interactive-game-4ucf19ofu-charlotteb25s-projects.vercel.app/",
     "repo": "https://github.com/CharlotteB25/Interactive-game"
   },
@@ -19,17 +22,70 @@
     "title": "Craft CMS - table tennis league",
     "year": 2025,
     "summary": "Admin-friendly portfolio backed by a headless CMS.",
-    "tags": ["Next.js", "TypeScript"],
+    "tags": [
+      "Craft CMS",
+      "Headless CMS",
+      "Twig",
+      "PHP",
+      "GraphQL",
+      "MySQL",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Docker",
+      "DDEV",
+      "Oracle Cloud"
+    ],
     "demo": "https://tabletenniscraft.com/",
     "repo": "https://github.com/CharlotteB25/cms-table-tennis-league"
   },
-
   {
     "title": "Escape Room IoT",
     "year": 2024,
     "summary": "An interactive escape room game using Raspberry Pi, MQTT, and sensors.",
-    "tags": ["Raspberry Pi", "IoT", "MQTT"],
+    "tags": [
+      "Raspberry Pi",
+      "Arduino Leonardo",
+      "Python",
+      "MQTT",
+      "IoT",
+      "Sensors"
+    ],
     "demo": "example.com",
     "repo": "example.com"
+  },
+  {
+    "title": "Travel Planner App",
+    "year": 2024,
+    "summary": "Real-time travel app with OpenWeather API and caching.",
+    "tags": [
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "OpenWeather API",
+      "JavaScript",
+      "Render",
+      "Caching"
+    ],
+    "demo": "https://travel-app-1-bzyp.onrender.com",
+    "repo": "https://github.com/CharlotteB25/travel-app"
+  },
+  {
+    "title": "Hobby Helper App",
+    "year": 2023,
+    "summary": "A personal project to help users find and manage hobbies.",
+    "tags": [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Mobile"
+    ],
+    "demo": "https://example.com",
+    "repo": "https://github.com/CharlotteB25/personal-portfolio"
   }
 ]
