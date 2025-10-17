@@ -1,0 +1,443 @@
+/* global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Titan+One&display=swap");
+
+/* ---------------- Base Type ---------------- */
+@layer base {
+  html {
+    font-family: "Noto Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI,
+      Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+  .title,
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Titan One", system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+  }
+
+  /* media hygiene */
+  img,
+  video,
+  canvas,
+  picture,
+  svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    mix-blend-mode: normal !important;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  /* selection with police tint */
+  ::selection {
+    background: rgb(46 67 101 / 0.22);
+    color: rgb(28 26 24);
+  }
+}
+
+/* ---------------- Tokens (mirror Tailwind palette) ---------------- */
+:root {
+  --marigold: 229 157 44; /* #E59D2C */
+  --buff: 243 213 141; /* #F3D58D */
+  --pearl: 235 221 197; /* #EBDDC5 */
+  --police: 46 67 101; /* #2E4365 */
+  --citrine: 138 59 8; /* #8A3B08 */
+  --ink: 28 26 24; /* #1C1A18 */
+
+  /* cursor-driven + angles */
+  --mx: 15%;
+  --my: -10%;
+  --tx: 0px;
+  --ty: 0px;
+  --rot: -15deg; /* main diagonal */
+  --rot2: -10deg; /* third wave slight offset */
+}
+
+/* ---------------- Retro Warm Canvas ---------------- */
+html,
+body {
+  min-height: 100%;
+}
+body {
+  color: rgb(var(--ink));
+  isolation: isolate;
+  position: relative;
+  overflow-x: hidden;
+  will-change: background-position;
+
+  /* Base paints + FEWER puddles (two circles) + a touch MORE blue */
+  background:
+    /* marigold cursor blob */ radial-gradient(
+      1300px 800px at var(--mx) var(--my),
+      rgb(var(--marigold) / 0.85),
+      transparent 66%
+    ),
+    /* buff wash */
+      radial-gradient(
+        2000px 1200px at 15% 8%,
+        rgb(var(--buff) / 0.7),
+        transparent 78%
+      ),
+    /* PUDDLES — single light tile with two circles (second is Police blue) */
+      /* pearl lift + citrine depth + paper */
+      radial-gradient(
+        1000px 600px at 22% 120%,
+        rgb(var(--pearl) / 0.92),
+        transparent 70%
+      ),
+    radial-gradient(
+      900px 460px at 86% 74%,
+      rgb(var(--citrine) / 0.36),
+      transparent 74%
+    ),
+    rgb(252 247 238); /* paper */
+
+  /* heavy layers fixed; puddle tile can scroll */
+  background-attachment: fixed, fixed, scroll, fixed, fixed, fixed, fixed, fixed,
+    scroll;
+
+  /* offsets so the tile doesn’t align to viewport origin */
+  background-position: center center, /* marigold */ 15% 8%,
+    /* buff */ 24px 36px, /* puddles */ 6% 94%, /* police glow A */ 96% 8%,
+    /* police glow B */ 50% 0%, /* police glow C (subtle) */ 22% 120%,
+    /* pearl lift */ 86% 74%, /* citrine glow */ 0 0; /* paper */
+}
+
+/* ---------------- Seamless Waves (3 layers) ---------------- */
+html::before,
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  background-repeat: no-repeat; /* no tiling -> no seams */
+  background-position: 50% 50%;
+  transform-origin: 50% 50%;
+  transition: transform 480ms cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+/* stacking + coverage */
+html::before {
+  inset: -26%;
+  z-index: -3;
+  background-size: 180vmax 180vmax;
+}
+body::before {
+  inset: -20%;
+  z-index: -2;
+  background-size: 160vmax 160vmax;
+}
+body::after {
+  inset: -20%;
+  z-index: -1;
+  background-size: 160vmax 160vmax;
+}
+
+/* transforms (cursor parallax + rotation) */
+html::before {
+  transform: translate3d(calc(var(--tx) * 0.8), calc(var(--ty) * 0.8), 0)
+    scale(1.04) rotate(var(--rot2));
+}
+body::before {
+  transform: translate3d(var(--tx), var(--ty), 0) scale(1.05) rotate(var(--rot));
+}
+body::after {
+  transform: translate3d(calc(var(--tx) * 0.6), calc(var(--ty) * 0.6), 0)
+    scale(1.04) rotate(var(--rot));
+}
+
+/* EXTRA wave — POLICE blue (slightly stronger) */
+html::before {
+  opacity: 0.54; /* up from 0.48 */
+  filter: blur(0.3px);
+  background-image: url("data:image/svg+xml,%3Csvg width='2200' height='2200' viewBox='0 0 2200 2200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232E4365' stroke-linecap='round' stroke-opacity='.32'%3E%3Cpath d='M-300 380 C 100 120 520 660 980 380 S 1760 120 2200 380' stroke-width='44'/%3E%3Cpath d='M-300 1020 C 100 760 520 1300 980 1020 S 1760 760 2200 1020' stroke-width='44'/%3E%3Cpath d='M-300 1660 C 100 1400 520 1940 980 1660 S 1760 1400 2200 1660' stroke-width='44'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* FRONT — MARIGOLD waves */
+body::before {
+  opacity: 0.85;
+  filter: blur(0.4px);
+  background-image: url("data:image/svg+xml,%3Csvg width='2000' height='2000' viewBox='0 0 2000 2000' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E59D2C' stroke-linecap='round' stroke-opacity='.96'%3E%3Cpath d='M-200 260 C 200 0 500 520 900 260 S 1600 0 2000 260' stroke-width='56'/%3E%3Cpath d='M-200 900 C 200 640 500 1160 900 900 S 1600 640 2000 900' stroke-width='56'/%3E%3Cpath d='M-200 1540 C 200 1280 500 1800 900 1540 S 1600 1280 2000 1540' stroke-width='56'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* BACK — BUFF + PEARL waves */
+body::after {
+  opacity: 0.7; /* a hair stronger to lift contrast */
+  filter: blur(0.4px);
+  background-image: url("data:image/svg+xml,%3Csvg width='2000' height='2000' viewBox='0 0 2000 2000' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Cpath d='M-200 560 C 200 300 500 820 900 560 S 1600 300 2000 560' stroke='%23F3D58D' stroke-width='46' stroke-opacity='.92'/%3E%3Cpath d='M-200 1280 C 200 1020 500 1540 900 1280 S 1600 1020 2000 1280' stroke='%23EBDDC5' stroke-width='44' stroke-opacity='.90'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* --- Mobile / Safari fallbacks --- */
+@media (max-width: 1024px) {
+  body {
+    background-attachment: scroll, scroll, scroll, scroll, scroll, scroll,
+      scroll, scroll;
+  }
+  html::before,
+  body::before,
+  body::after {
+    filter: none;
+    opacity: 0.5;
+  }
+}
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-attachment: scroll, scroll, scroll, scroll, scroll, scroll,
+      scroll, scroll;
+  }
+  html::before,
+  body::before,
+  body::after {
+    filter: none;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html::before,
+  body::before,
+  body::after {
+    transition: none;
+  }
+  html::before {
+    transform: rotate(var(--rot2));
+  }
+  body::before,
+  body::after {
+    transform: rotate(var(--rot));
+  }
+}
+
+/* ---------------- Underline shimmer ---------------- */
+@keyframes wave-slide {
+  50% {
+    background-position-x: 85%;
+  }
+}
+.anim-wave-slide {
+  display: block;
+  background-repeat: repeat-x;
+  background-size: 300% 100% !important;
+  animation: wave-slide 7s linear infinite;
+}
+
+/* ---------------- Utilities (aliases + blue-friendly tweaks) ---------------- */
+@layer utilities {
+  /* palette aliases */
+  .text-marigold {
+    color: rgb(var(--marigold));
+  }
+  .text-buff {
+    color: rgb(var(--buff));
+  }
+  .text-pearl {
+    color: rgb(var(--pearl));
+  }
+  .text-police {
+    color: rgb(var(--police));
+  }
+  .text-citrine {
+    color: rgb(var(--citrine));
+  }
+  .text-ink {
+    color: rgb(var(--ink));
+  }
+
+  .border-marigold {
+    border-color: rgb(var(--marigold));
+  }
+  .border-buff {
+    border-color: rgb(var(--buff));
+  }
+  .border-pearl {
+    border-color: rgb(var(--pearl));
+  }
+  .border-police {
+    border-color: rgb(var(--police));
+  }
+  .border-citrine {
+    border-color: rgb(var(--citrine));
+  }
+
+  /* “legacy” helpers from earlier code (mapped to new palette) */
+  .text-brand {
+    color: rgb(var(--marigold));
+  } /* supports group-hover:text-brand */
+  .text-blood {
+    color: rgb(var(--police));
+  } /* nudge link to blue */
+  .border-blood {
+    border-color: rgb(var(--police));
+  } /* borders -> blue */
+  .border-blood\/90 {
+    border-color: rgb(var(--police) / 0.9);
+  }
+  .text-custard {
+    color: rgb(var(--buff));
+  }
+  .text-custard\/90 {
+    color: rgb(var(--buff) / 0.9);
+  }
+  .bg-paper {
+    background-color: rgb(252 247 238);
+  }
+  .bg-paper\/70 {
+    background-color: rgb(252 247 238 / 0.7);
+  }
+
+  /* copy tweak used in your page */
+  .text-buff-ink {
+    color: rgb(var(--police) / 0.85);
+  }
+  .text-buff-ink-700 {
+    color: rgb(var(--police) / 0.82);
+  }
+
+  /* gradient helper already referenced in page */
+  .background-gradient {
+    background: linear-gradient(
+      135deg,
+      rgb(var(--pearl)) 0%,
+      rgb(var(--buff) / 0.65) 50%,
+      rgb(var(--police) / 0.18) 100%
+    );
+  }
+
+  .link-underline {
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgb(var(--police));
+  }
+}
+
+/* ---------------- Components ---------------- */
+@layer components {
+  .wave-card {
+    position: relative;
+    z-index: 1;
+    border-radius: 1.25rem; /* 2xl from tailwind config */
+    background: linear-gradient(
+      180deg,
+      rgba(255, 246, 236, 0.9),
+      rgba(250, 229, 194, 0.8)
+    );
+    box-shadow: 0 12px 28px -10px rgba(229, 171, 78, 0.35),
+      /* marigold glow */ 0 8px 18px -10px rgba(64, 77, 98, 0.28); /* police base (a touch stronger) */
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+  }
+  .wave-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image: radial-gradient(
+        50% 20% at 90% 0%,
+        rgb(var(--marigold) / 0.3),
+        transparent 80%
+      ),
+      radial-gradient(
+        100% 100% at 100% 0%,
+        rgb(var(--buff) / 0.5),
+        transparent 80%
+      ),
+      radial-gradient(
+        45% 35% at 100% 0%,
+        rgb(var(--police) / 0.12),
+        transparent 80%
+      );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .wave-card:hover::after {
+    opacity: 0.7;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-2xl px-5 py-2.5 text-sm font-semibold transition;
+    color: rgb(var(--marigold));
+    background: rgb(var(--marigold) / 0.1);
+    border: 2px solid rgb(var(--marigold) / 0.5);
+  }
+  .btn:hover {
+    background: rgb(var(--marigold) / 0.2);
+    border-color: rgb(var(--marigold) / 0.3);
+  }
+
+  .btn-primary {
+    background: rgb(var(--marigold));
+    color: #1b1a18;
+    box-shadow: 0 14px 34px -14px rgb(var(--marigold) / 0.55);
+    transform: translateY(0);
+  }
+  .btn-primary:hover {
+    filter: brightness(0.98);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    color: rgb(var(--police));
+    background: rgb(var(--police) / 0.08);
+    border: 1px solid rgb(var(--police) / 0.22);
+  }
+  .btn-ghost:hover {
+    background: rgb(var(--police) / 0.12);
+    border-color: rgb(var(--police) / 0.3);
+  }
+
+  .section {
+    @apply px-6 sm:px-8 md:px-9 lg:px-10 max-w-6xl mx-auto;
+  }
+
+  .ribbon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    background: linear-gradient(
+      90deg,
+      rgb(var(--marigold) / 0.26),
+      rgb(var(--police) / 0.22)
+    );
+    border: 1px solid rgb(var(--police) / 0.34);
+    box-shadow: 0 8px 18px -10px rgba(229, 157, 44, 0.35);
+  }
+
+  @keyframes fade-slide {
+    0% {
+      opacity: 0;
+      transform: translateY(0.5em);
+    }
+    20% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    80% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-0.5em);
+    }
+  }
+
+  .animate-fade-slide {
+    animation: fade-slide 3.5s ease-in-out infinite;
+  }
+}

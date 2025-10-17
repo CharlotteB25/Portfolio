@@ -1,0 +1,44 @@
+import type { Metadata } from "next";
+import "./globals.css";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Portfolio - Charlotte Billiet",
+  description: "Projects, experience and contact links.",
+  openGraph: {
+    title: "Portfolio - Charlotte Billiet",
+    description: "Projects, experience and contact links.",
+    url: "https://example.com",
+    type: "website",
+    images: [
+      {
+        url: "/brand/CB-title-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Charlotte Billiet Portfolio",
+      },
+    ],
+  },
+  metadataBase: new URL("https://example.com"),
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className="min-h-screen flex flex-col">
+        <Navbar /> {/* header is h-16 = 4rem */}
+        {/* Make main fill the remaining viewport and center its children */}
+        <main className="flex-1 flex items-start justify-center min-h-[calc(100vh-4rem-4rem)] px-6 pt-10 pb-16">
+          {/* ^ assumes header h-16 (4rem) and footer ~4rem */}
+          <div className="w-full max-w-6xl">{children}</div>
+        </main>
+        <Footer />
+      </body>
+    </html>
+  );
+}

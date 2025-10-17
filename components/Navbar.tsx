@@ -1,0 +1,122 @@
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { clsx } from "clsx";
+import { useEffect, useState } from "react";
+
+export function Navbar() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => setOpen(false), [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const link = (href: string, label: string, onClick?: () => void) => (
+    <Link
+      href={href}
+      onClick={onClick}
+      className={clsx(
+        "px-3 py-2 rounded-xl transition-colors border",
+        pathname === href
+          ? "bg-marigold text-ink border-marigold"
+          : "hover:bg-marigold/20 border-marigold/40 text-marigold"
+      )}
+    >
+      {label}
+    </Link>
+  );
+
+  return (
+    <header className="w-full border-b border-marigold/80">
+      {/* full-width row with ~20px side padding */}
+      <div className="w-full h-16 flex items-center justify-between px-8 py-2">
+        {/* LEFT: mono badge */}
+        <Link
+          href="/"
+          className="flex items-center"
+          aria-label="Charlotte Billiet"
+        >
+          <div className="h-12 rounded-full overflow-hidden ">
+            <img
+              src="/brand/CB-title-logo.png"
+              alt="Charlotte Billiet monogram"
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </Link>
+
+        {/* RIGHT: links (desktop) + hamburger (mobile) */}
+        <div className="flex items-center gap-3">
+          <nav className="hidden sm:flex items-center gap-3">
+            {link("/", "Home")}
+            {link("/projects", "Projects")}
+            {link("/contact", "Contact")}
+          </nav>
+
+          <button
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen((v) => !v)}
+            className="sm:hidden inline-flex items-center justify-center rounded-xl p-2
+                       border border-marigold/60 hover:bg-marigold/20 text-marigold
+                       focus:outline-none focus:ring-2 focus:ring-marigold/60"
+          >
+            {!open ? (
+              <svg
+                className="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M3 6h18M3 12h18M3 18h18" />
+              </svg>
+            ) : (
+              <svg
+                className="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      <div id="mobile-menu" className={clsx("sm:hidden", { hidden: !open })}>
+        {/* Dim background */}
+        <div
+          className="fixed inset-0 z-40 bg-ink/40 backdrop-blur-sm"
+          onClick={() => setOpen(false)}
+          aria-hidden="true"
+        />
+        {/* Panel pinned 20px from edges */}
+        <div
+          className={clsx(
+            "absolute top-16 inset-x-5 z-50 rounded-2xl overflow-hidden",
+            "transition-transform duration-200",
+            open ? "translate-y-0" : "-translate-y-4"
+          )}
+        >
+          <div className="wave-card p-4">
+            <div className="flex flex-col gap-2 text-center">
+              {link("/", "Home", () => setOpen(false))}
+              {link("/projects", "Projects", () => setOpen(false))}
+              {link("/contact", "Contact", () => setOpen(false))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}
