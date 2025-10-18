@@ -35,14 +35,14 @@ export function Navbar() {
   return (
     <header className="w-full border-b border-marigold/80">
       {/* full-width row with ~20px side padding */}
-      <div className="w-full h-16 flex items-center justify-between px-8 py-2">
+      <div className="w-full h-16 flex items-center justify-between px-6 py-2">
         {/* LEFT: mono badge */}
         <Link
           href="/"
           className="flex items-center"
           aria-label="Charlotte Billiet"
         >
-          <div className="h-11 w-11 rounded-full overflow-hidden ">
+          <div className="h-14 w-14 rounded-full overflow-hidden ">
             <img
               src="/brand/CB-title-logo.png"
               alt="Charlotte Billiet monogram"

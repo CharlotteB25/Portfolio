@@ -6,19 +6,12 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Portfolio - Charlotte Billiet",
   description: "Projects, experience and contact links.",
+
   openGraph: {
     title: "Portfolio - Charlotte Billiet",
     description: "Projects, experience and contact links.",
     url: "https://charlottebilliet.com",
     type: "website",
-    images: [
-      {
-        url: "",
-        width: 1200,
-        height: 630,
-        alt: "Charlotte Billiet Portfolio",
-      },
-    ],
   },
   metadataBase: new URL("https://charlottebilliet.com"),
 };

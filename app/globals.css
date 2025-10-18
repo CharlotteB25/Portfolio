@@ -1,25 +1,18 @@
-/* global.css */
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Spicy+Rice&display=swap"); /* global.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Titan+One&display=swap");
-
 /* ---------------- Base Type ---------------- */
 @layer base {
   html {
-    font-family: "Noto Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI,
+    font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, Segoe UI,
       Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
   }
-  .title,
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-family: "Titan One", system-ui, sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.2px;
+  .title {
+    font-family: "Spicy Rice", system-ui, sans-serif;
+    font-weight: 400;
   }
 
   /* media hygiene */
@@ -388,13 +381,13 @@ body::after {
   }
 
   .btn-ghost {
-    color: rgb(var(--police));
-    background: rgb(var(--police) / 0.08);
-    border: 1px solid rgb(var(--police) / 0.22);
+    color: rgb(var(--marigold));
+    background: rgb(var(--marigold) / 0.08);
+    border: 1px solid rgb(var(--marigold) / 0.5);
   }
   .btn-ghost:hover {
-    background: rgb(var(--police) / 0.12);
-    border-color: rgb(var(--police) / 0.3);
+    background: rgb(var(--marigold) / 0.12);
+    border-color: rgb(var(--marigold) / 0.3);
   }
 
   .section {

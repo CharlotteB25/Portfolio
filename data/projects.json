@@ -1,39 +1,38 @@
 [
   {
-    "title": "3D interactive game",
+    "title": "3D Interactive Game",
     "year": 2025,
-    "summary": "Immersive 3D game built with Three.js and WebGL.",
+    "summary": "An immersive browser-based 3D experience built with Three.js, WebGL, and React. Features real-time rendering, optimized assets, and interactive camera controls.",
     "tags": [
       "Three.js",
       "WebGL",
       "React",
       "TypeScript",
-      "glTF",
       "Blender",
+      "GLTF",
       "3D Modeling",
+      "Vercel",
       "HTML",
-      "CSS",
-      "Vercel"
+      "CSS"
     ],
     "demo": "https://interactive-game-4ucf19ofu-charlotteb25s-projects.vercel.app/",
     "repo": "https://github.com/CharlotteB25/Interactive-game"
   },
   {
-    "title": "Craft CMS - table tennis league",
+    "title": "Craft CMS — Table Tennis League",
     "year": 2025,
-    "summary": "Admin-friendly portfolio backed by a headless CMS.",
+    "summary": "Full-stack web platform built with Craft CMS and a Next.js front end. Features headless CMS architecture, and Docker-based deployment on Oracle Cloud.",
     "tags": [
-      "Craft CMS",
-      "Headless CMS",
-      "Twig",
-      "PHP",
-      "GraphQL",
-      "MySQL",
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
+      "Craft",
+      "Headless CMS",
+      "GraphQL",
+      "Twig",
+      "PHP",
+      "MySQL",
       "Docker",
-      "DDEV",
       "Oracle Cloud"
     ],
     "demo": "https://tabletenniscraft.com/",
@@ -42,14 +41,15 @@
   {
     "title": "Escape Room IoT",
     "year": 2024,
-    "summary": "An interactive escape room game using Raspberry Pi, MQTT, and sensors.",
+    "summary": "Interactive IoT-based escape room project using Raspberry Pi, Arduino Leonardo, and MQTT to connect physical puzzles with digital triggers and sensors.",
     "tags": [
-      "Raspberry Pi",
-      "Arduino Leonardo",
       "Python",
+      "Raspberry Pi",
+      "Arduino",
       "MQTT",
       "IoT",
-      "Sensors"
+      "Sensors",
+      "Hardware Integration"
     ],
     "demo": "example.com",
     "repo": "example.com"
@@ -57,16 +57,17 @@
   {
     "title": "Travel Planner App",
     "year": 2024,
-    "summary": "Real-time travel app with OpenWeather API and caching.",
+    "summary": "Responsive full-stack travel planner with live weather updates via OpenWeather API, custom routing, and server-side caching for faster load times.",
     "tags": [
       "React",
-      "Tailwind CSS",
       "Node.js",
       "Express",
       "MongoDB",
+      "Tailwind CSS",
       "OpenWeather API",
       "JavaScript",
       "Render",
+      "API Integration",
       "Caching"
     ],
     "demo": "https://travel-app-1-bzyp.onrender.com",
@@ -75,15 +76,16 @@
   {
     "title": "Hobby Helper App",
     "year": 2023,
-    "summary": "A personal project to help users find and manage hobbies.",
+    "summary": "Cross-platform mobile app built with React Native and Expo to help users discover, track, and organize hobbies. Includes Node.js backend and MongoDB database.",
     "tags": [
       "React Native",
-      "Expo",
+      "Expo Go",
       "TypeScript",
       "Node.js",
       "Express",
       "MongoDB",
-      "Mobile"
+      "Mobile Development",
+      "Cross-Platform"
     ],
     "demo": "https://example.com",
     "repo": "https://github.com/CharlotteB25/personal-portfolio"

@@ -24,11 +24,11 @@ export default function Home() {
       ch - css length unit for text layout, linked to the typography and not the pixels or percentages best for this section
       ch keeps the text animation smooth by reserving space equal to about 6-7 characters */}
       <section className="relative isolate">
-        <div className="section grid grid-cols-1 xl:grid-cols-12 gap-10 items-start">
-          <div className="xl:col-span-8 ">
-            <h1 className="title text-[clamp(2.5rem,6.5vw,5rem)] leading-[1.2] tracking-tight">
+        <div className="section grid xl:grid-cols-6 gap-10 items-start">
+          <div className="xl:col-span-4 ">
+            <h1 className="title text-[clamp(4rem,6.5vw,5rem)] leading-[1.2] tracking-tight text-ink-700">
               I design & build{" "}
-              <span className="relative inline-block min-w-[6.5ch]">
+              <span className="relative inline-block min-w-[6ch]">
                 <span
                   key={words[index]}
                   className="text-marigold inline-block animate-fade-slide transition-all duration-700 ease-in-out"
@@ -67,12 +67,11 @@ export default function Home() {
           </div>
 
           {/* Right rail — fun fact card */}
-          <aside className="xl:col-span-4 xl:sticky xl:top-28">
-            <div className="wave-card p-6 rounded-3xl border-marigold ">
-              <h3 className="title text-2xl">Currently</h3>
-              <p className="text-ink-800 font-semibold mt-4">
-                Prototyping motion-rich UI patterns and tightening a component
-                library.
+          <aside className="xl:col-span-2 xl:sticky xl:top-28">
+            <div className="wave-card p-6 rounded-3xl border-marigold">
+              <p className="text-ink-800 font-semibold ">
+                Currently open to exciting opportunities in web development and
+                refining my UI and design craft.
               </p>
               <div className="mt-4 grid grid-rows-2 gap-3 text-sm">
                 <div className="rounded-xl border border-marigold/60 p-3">
@@ -134,19 +133,14 @@ export default function Home() {
       gap-3 sm:gap-0
     "
         >
-          <h2 className="title text-3xl text-ink-700 mt-10">
-            Selected Projects
-          </h2>
+          <h2 className=" text-3xl text-ink-700 mt-10">Selected Projects</h2>
           <Link
             href="/projects"
             className="
         inline-flex items-center justify-center
-        px-4 py-2 sm:px-5 sm:py-2.5
-        rounded-full border-2 border-marigold/70
-        text-marigold font-semibold text-sm sm:text-base
-        hover:bg-marigold hover:text-ink
-        transition-all duration-300 ease-out
-        shadow-sm hover:shadow-md
+         sm:px-5 sm:py-2.5
+         sm:text-base
+          btn btn-ghost
       "
           >
             See all
@@ -179,10 +173,10 @@ export default function Home() {
       {/* RÉSUMÉ SNAPSHOT */}
       <section id="resume" className="section space-y-8">
         <div className="flex items-end justify-between">
-          <h2 className="title text-3xl text-ink-700 mt-10">Résumé Snapshot</h2>
+          <h2 className=" text-3xl text-ink-700 mt-10">Résumé Snapshot</h2>
           <a
             href="/CV/Resume-CharlotteBilliet - Fullstack.pdf"
-            className="btn"
+            className="btn btn-ghost btn-sm"
             aria-label="Download résumé as PDF"
           >
             Download PDF
@@ -193,7 +187,7 @@ export default function Home() {
           {/* Education */}
           <div className="lg:col-span-4">
             <div className="wave-card rounded-3xl p-7 h-full">
-              <h3 className="title text-2xl text-ink-700">Education</h3>
+              <h3 className=" text-2xl text-ink-700">Education</h3>
               <ul className="mt-4 space-y-4 text-sm">
                 <li>
                   <div className=" text-marigold-500 mb-1">
@@ -220,7 +214,7 @@ export default function Home() {
           {/* Skills (wider) */}
           <div className="lg:col-span-4">
             <div className="wave-card rounded-3xl p-7 h-full">
-              <h3 className="title text-2xl text-ink-700">Skills</h3>
+              <h3 className=" text-2xl text-ink-700">Skills</h3>
 
               {/* Frontend */}
               <div className="mt-4 text-sm">
@@ -319,7 +313,7 @@ export default function Home() {
           {/* Experience timeline */}
           <div className="lg:col-span-4">
             <div className="wave-card rounded-3xl p-7 h-full">
-              <h3 className="title text-2xl text-ink-700">Experience</h3>
+              <h3 className=" text-2xl text-ink-700">Experience</h3>
               <ol className="relative mt-8 border-l border-marigold/70 ps-8 space-y-6">
                 <li className="relative">
                   <span className="absolute -left-4 top-1.5 h-2.5 w-2.5 rounded-full bg-marigold" />
@@ -375,7 +369,7 @@ export default function Home() {
       <section id="contact" className="section pb-24 ">
         <div className="wave-card mt-10 p-6 sm:p-8 rounded-3xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
           <div>
-            <h3 className="title text-2xl text-ink-700">
+            <h3 className=" text-2xl text-ink-700">
               Let’s make something together.
             </h3>
             <p className="text-pearl-900 mt-2">
