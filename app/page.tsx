@@ -28,14 +28,15 @@ export default function Home() {
       {/*       fix mobile overflow issue!!!
        */}{" "}
       <section className="section relative isolate">
-        <div className="grid xl:grid-cols-12 gap-5 items-start">
-          <div className="xl:col-span-8">
+        <div className="flex flex-col xl:flex-row xl:items-start xl:gap-10">
+          {/* LEFT — Hero text */}
+          <div className="flex-1 text-center xl:text-left">
             <h1
               className="
           title text-ink-700
-          leading-[1.15]
-          text-[clamp(3.2rem,5.5vw,5.2rem)]
-          max-w-[18ch] sm:max-w-[12ch]
+          leading-[1.1]
+          text-[clamp(3.25rem,10vw,5.6rem)]
+          max-w-[18ch] sm:max-w-[14ch]
         "
             >
               I design & build{" "}
@@ -55,7 +56,7 @@ export default function Home() {
             </h1>
 
             <p className="text-ink-700 text-lg max-w-2xl pt-6 leading-relaxed">
-              Hi, I’m Charlotte a recent graduate in fullstack development with
+              Hi, I’m Charlotte, a recent graduate in fullstack development with
               experience in frontend design and backend development. Growing up
               across five countries taught me adaptability, creativity, and
               strong collaboration in international teams. I’m passionate about
@@ -63,7 +64,7 @@ export default function Home() {
               user-centered design.
             </p>
 
-            <div className="flex flex-wrap gap-4 mt-6">
+            <div className="flex flex-wrap gap-4 mt-6 justify-center xl:justify-start">
               <Link href="/projects" className="btn btn-primary">
                 View projects
               </Link>
@@ -76,7 +77,8 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="xl:col-span-4 xl:sticky xl:top-28">
+          {/* RIGHT — Fun fact card */}
+          <aside className="xl:w-[30%] mt-10 xl:mt-0 xl:sticky xl:top-28">
             <div className="wave-card p-6 rounded-3xl border border-marigold/70">
               <p className="text-ink-800 font-semibold">
                 Currently open to exciting opportunities in web development and

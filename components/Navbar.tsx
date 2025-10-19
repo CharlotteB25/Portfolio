@@ -65,13 +65,17 @@ export function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
-            className="sm:hidden inline-flex items-center justify-center rounded-xl p-2
-                       border-2 border-marigold/60 hover:bg-marigold/20 text-marigold
-                       focus:outline-none focus:ring-2 focus:ring-marigold/60"
+            className={clsx(
+              "sm:hidden inline-flex items-center justify-center rounded-xl p-2 transition-colors duration-200",
+              "border-2 text-[rgb(var(--citrine)/0.6)] border-[rgb(var(--citrine)/0.6)]",
+              "hover:bg-[rgb(var(--citrine)/0.3)] hover:text-[rgb(var(--citrine/0.8))]",
+              "focus:outline-none focus:ring-2 focus:ring-[rgb(var(--citrine)/0.4)]",
+              open && "bg-[rgb(var(--citrine)/0.6)] text-[rgb(var(--ink))]"
+            )}
           >
             {!open ? (
               <svg
-                className="h-4 w-4"
+                className="h-5 w-5"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -86,18 +90,17 @@ export function Navbar() {
               </svg>
             ) : (
               <svg
-                className="h-4 w-4"
+                className="h-5 w-5"
                 viewBox="0 0 24 24"
+                fill="none"
                 stroke="currentColor"
                 strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                fill="none"
                 aria-hidden="true"
               >
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />{" "}
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             )}
           </button>
