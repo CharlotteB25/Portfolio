@@ -67,15 +67,15 @@ export function Navbar() {
             onClick={() => setOpen((v) => !v)}
             className={clsx(
               "sm:hidden inline-flex items-center justify-center rounded-xl p-2 transition-colors duration-200",
-              "border-2 text-[rgb(var(--citrine)/0.6)] border-[rgb(var(--citrine)/0.6)]",
-              "hover:bg-[rgb(var(--citrine)/0.3)] hover:text-[rgb(var(--citrine/0.8))]",
-              "focus:outline-none focus:ring-2 focus:ring-[rgb(var(--citrine)/0.4)]",
-              open && "bg-[rgb(var(--citrine)/0.6)] text-[rgb(var(--ink))]"
+              "border-2 text-[rgb(var(--citrine))] border-[rgb(184,92,36)]",
+              "hover:bg-[rgb(184,92, 36)] hover:text-[rgb(184,92, 36)]",
+              "focus:outline-none focus:ring-2 focus:ring-[rgb(184,92, 36)]",
+              open && "bg-[rgb(184,92, 36)] text-[rgb(184,92, 36)]"
             )}
           >
             {!open ? (
               <svg
-                className="h-5 w-5"
+                className="h-3 w-3"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"

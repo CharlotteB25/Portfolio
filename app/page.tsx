@@ -226,9 +226,7 @@ export default function Home() {
 
               {/* Frontend */}
               <div className="mt-4 text-sm">
-                <div className="text-marigold-500 mb-1 font-semibold mb-3">
-                  Frontend
-                </div>
+                <div className="text-marigold-500 mb-1 mb-3">Frontend</div>
                 <ul className="text-pearl-900 space-y-1">
                   <li>
                     <span className="font-semibold">Languages:</span> HTML, CSS,
@@ -258,9 +256,7 @@ export default function Home() {
 
               {/* Backend */}
               <div className="text-sm">
-                <div className="text-marigold-500 mb-3 font-semibold">
-                  Backend
-                </div>
+                <div className="text-marigold-500 mb-3 ">Backend</div>
                 <ul className="text-pearl-900 space-y-1">
                   <li>
                     <span className="font-semibold">Languages:</span> JavaScript
@@ -282,9 +278,7 @@ export default function Home() {
 
               {/* Design */}
               <div className="text-sm">
-                <div className="text-marigold-500 mb-3 font-semibold">
-                  UX / UI
-                </div>
+                <div className="text-marigold-500 mb-3 ">UX / UI</div>
                 <ul className="text-pearl-900 space-y-1">
                   <li>
                     <span className="font-semibold">Tools:</span> Adobe XD,
@@ -373,8 +367,16 @@ export default function Home() {
         </div>
       </section>
       {/* CONTACT — playful CTA */}
-      <section id="contact" className="section pb-24 ">
-        <div className="wave-card mt-10 p-6 sm:p-8 rounded-3xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+      <section id="contact" className="section pb-20 ">
+        <div
+          className="wave-card mt-10 p-6 sm:p-8 rounded-3xl 
+  flex flex-col sm:flex-row 
+  items-center sm:items-center 
+  justify-center sm:justify-between 
+  text-center sm:text-left 
+  gap-5"
+        >
+          {" "}
           <div>
             <h3 className=" text-2xl text-ink-700">
               Let’s make something together.
