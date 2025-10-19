@@ -22,11 +22,22 @@ export default function Home() {
     <main className="space-y-10 sm:space-y-10 mt-10">
       {/* HERO — billboard with playful accents
       ch - css length unit for text layout, linked to the typography and not the pixels or percentages best for this section
-      ch keeps the text animation smooth by reserving space equal to about 6-7 characters */}
-      <section className="relative isolate">
-        <div className="section grid xl:grid-cols-6 gap-10 items-start">
-          <div className="xl:col-span-4 ">
-            <h1 className="title text-[clamp(4rem,6.5vw,5rem)] leading-[1.2] tracking-tight text-ink-700">
+      ch keeps the text animation smooth by reserving space equal to about 6-7 characters
+      relative isolate is a positioning context that allows absolutely positioned elements to be placed relative to their nearest positioned ancestor.
+      */}
+      {/*       fix mobile overflow issue!!!
+       */}{" "}
+      <section className="section relative isolate">
+        <div className="grid xl:grid-cols-12 gap-5 items-start">
+          <div className="xl:col-span-8">
+            <h1
+              className="
+          title text-ink-700
+          leading-[1.15]
+          text-[clamp(3.2rem,5.5vw,5.2rem)]
+          max-w-[18ch] sm:max-w-[12ch]
+        "
+            >
               I design & build{" "}
               <span className="relative inline-block min-w-[6ch]">
                 <span
@@ -43,7 +54,6 @@ export default function Home() {
               digital experiences.
             </h1>
 
-            {/* Balanced About Me */}
             <p className="text-ink-700 text-lg max-w-2xl pt-6 leading-relaxed">
               Hi, I’m Charlotte a recent graduate in fullstack development with
               experience in frontend design and backend development. Growing up
@@ -57,7 +67,7 @@ export default function Home() {
               <Link href="/projects" className="btn btn-primary">
                 View projects
               </Link>
-              <a href="#contact" className=" btn btn-primary">
+              <a href="#contact" className="btn btn-primary">
                 Let’s talk
               </a>
               <a href="#resume" className="btn btn-primary">
@@ -66,30 +76,28 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right rail — fun fact card */}
-          <aside className="xl:col-span-2 xl:sticky xl:top-28">
-            <div className="wave-card p-6 rounded-3xl border-marigold">
-              <p className="text-ink-800 font-semibold ">
+          <aside className="xl:col-span-4 xl:sticky xl:top-28">
+            <div className="wave-card p-6 rounded-3xl border border-marigold/70">
+              <p className="text-ink-800 font-semibold">
                 Currently open to exciting opportunities in web development and
                 refining my UI and design craft.
               </p>
               <div className="mt-4 grid grid-rows-2 gap-3 text-sm">
                 <div className="rounded-xl border border-marigold/60 p-3">
                   <div className="text-ink-800 font-semibold mb-2">Open to</div>
-                  <div className="">Fullstack | Front End Development</div>
+                  <div>Fullstack | Front End Development</div>
                 </div>
                 <div className="rounded-xl border border-marigold/60 p-3">
                   <div className="text-ink-800 font-semibold mb-2">
                     Location
                   </div>
-                  <div className="">Ghent, Belgium | Remote</div>
+                  <div>Ghent, Belgium | Remote</div>
                 </div>
               </div>
             </div>
           </aside>
         </div>
       </section>
-
       {/* featured strip */}
       <section>
         <div
@@ -122,7 +130,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
       {/* WORK GRID — staggered & bold */}
       <section id="projects" className="section space-y-8">
         <div
@@ -169,7 +176,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
       {/* RÉSUMÉ SNAPSHOT */}
       <section id="resume" className="section space-y-8">
         <div className="flex items-end justify-between">
@@ -364,7 +370,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* CONTACT — playful CTA */}
       <section id="contact" className="section pb-24 ">
         <div className="wave-card mt-10 p-6 sm:p-8 rounded-3xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
