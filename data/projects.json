@@ -51,7 +51,7 @@
       "Sensors",
       "Hardware Integration"
     ],
-    "demo": "https://example.com",
+    "demo": "/projects/wot",
     "repo": "example.com"
   },
   {
@@ -87,7 +87,7 @@
       "Mobile Development",
       "Cross-Platform"
     ],
-    "demo": "https://example.com",
+    "demo": "/projects/hobbyhelper",
     "repo": "https://github.com/CharlotteB25/personal-portfolio"
   }
 ]
