@@ -83,15 +83,17 @@ export default function HobbyHelperDetail() {
         <div className="mt-6 grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(260px,1.2fr)] md:items-start">
           {/* Left: Copy */}
           <div>
-            <h1 className="title mt-3 text-3xl md:text-5xl tracking-tight">
-              {" "}
+            {/* Icon + Title inline */}
+            <div className="flex items-center gap-3">
               <img
                 src="/hobbyhelper/icon.png"
                 alt="Hobby Helper icon"
-                className="h-8 w-8 "
+                className="h-10 w-10 rounded-xl object-contain"
               />
-              {project.title}
-            </h1>
+              <h1 className="title text-3xl md:text-5xl tracking-tight">
+                {project.title}
+              </h1>
+            </div>
 
             <p className="mt-3 max-w-3xl text-base md:text-lg text-ink-700">
               {project.subtitle}
