@@ -144,7 +144,7 @@ export default function HobbyHelperDetail() {
             <div className="wave-card overflow-hidden rounded-3xl p-3 bg-paper/80">
               <div className="relative">
                 <img
-                  src="/hobbyhelper/hobbyhelper-poster-vertical.png"
+                  src="/hobbyhelper/hobbyHelperPoster.png"
                   alt="Hobby Helper poster"
                   className="w-full rounded-2xl object-cover shadow-lg"
                 />
@@ -259,7 +259,7 @@ export default function HobbyHelperDetail() {
           <div className="wave-card flex items-center gap-3 rounded-3xl p-4">
             <div className="rounded-2xl overflow-hidden border border-blood/40 bg-paper/80 p-2">
               <img
-                src="/hobbyhelper/latest-hobby-helper-build.png"
+                src="/hobbyhelper/qrcode.png"
                 alt="QR code linking to the latest Hobby Helper Expo Go build"
                 className="w-24 h-24 object-contain"
               />
