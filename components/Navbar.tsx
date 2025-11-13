@@ -67,10 +67,10 @@ export function Navbar() {
             onClick={() => setOpen((v) => !v)}
             className={clsx(
               "sm:hidden inline-flex items-center justify-center rounded-xl p-2 transition-colors duration-200",
-              "border-2 text-[rgb(var(--citrine))] border-[rgb(184,92,36)]",
-              "hover:bg-[rgb(184,92, 36)] hover:text-[rgb(184,92, 36)]",
-              "focus:outline-none focus:ring-2 focus:ring-[rgb(184,92, 36)]",
-              open && "bg-[rgb(184,92, 36)] text-[rgb(184,92, 36)]"
+              "border-2 text-citrine border-citrine",
+              "hover:bg-[rgb(205, 108, 33)] hover:text-[rgb(205, 108, 33)]",
+              "focus:outline-none focus:ring-2 focus:ring-[rgb(205, 108, 33)]",
+              open && "bg-[rgb(205, 108, 33)] text-[rgb(205, 108, 33)]"
             )}
           >
             {!open ? (
@@ -79,22 +79,22 @@ export function Navbar() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2.5"
+                strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
               >
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
+                <line x1="3" y1="6" x2="24" y2="6" />
+                <line x1="3" y1="12" x2="24" y2="12" />
+                <line x1="3" y1="18" x2="24" y2="18" />
               </svg>
             ) : (
               <svg
-                className="h-5 w-5"
+                className="h-3 w-3"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2.5"
+                strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
