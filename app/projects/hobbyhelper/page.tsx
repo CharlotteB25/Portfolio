@@ -8,7 +8,7 @@ const cx = (...classes: Array<string | false | undefined | null>) =>
 
 // ------------ Badge ------------
 const Badge = ({ children }: { children: React.ReactNode }) => (
-  <span className="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium mr-2 mb-2 text-police bg-paper/70">
+  <span className="inline-flex items-center rounded-full px-3 py-2 text-xs font-medium mr-2 mb-2 text-marigold bg-paper/70">
     {children}
   </span>
 );
@@ -36,12 +36,13 @@ export default function HobbyHelperDetail() {
     status: "Prototype available via Expo Go",
   } as const;
 
-  const EXPO_URL = "https://expo.dev/preview/your-hobby-helper-link"; // TODO: replace
+  const EXPO_URL =
+    "https://expo.dev/accounts/charsie/projects/frontend/builds/e909dac7-8dc6-4a4e-b2a6-03b12665efd3"; // TODO: replace
   const GITHUB_URL = "https://github.com/CharlotteB25/hobby-helper"; // TODO: replace
   const THESIS_URL = "/documents/HobbyHelper-thesis.pdf";
 
   const highlights = [
-    "Rooted in research around 'leisure fatigue', wellbeing and intentional free time.",
+    "Rooted in research around 'leisure fatigue', wellbeing and free time.",
     "Curated suggestions instead of infinite feeds or gamified streaks.",
     "Soft, warm visual identity that invites rest instead of productivity pressure.",
     "Expo Go prototype used in an expo stand with a screen-break 'hobby corner' concept.",
@@ -53,7 +54,9 @@ export default function HobbyHelperDetail() {
     "TypeScript",
     "Context-based state",
     "REST APIs",
-    "Figma",
+    "Adobe XD",
+    "MongoDB",
+    "Node.js",
   ];
 
   const jsonLd = {
@@ -127,7 +130,7 @@ export default function HobbyHelperDetail() {
               </a>
               <a
                 href={GITHUB_URL}
-                className="inline-flex items-center rounded-xl px-4 py-2 text-sm font-semibold border border-blood text-ink-700 hover:bg-paper/70 transition"
+                className="inline-flex items-center rounded-xl px-4 py-2 text-sm font-semibold border border-marigold text-ink-700 hover:bg-paper/70 transition"
               >
                 View code on GitHub
               </a>
@@ -169,29 +172,30 @@ export default function HobbyHelperDetail() {
             <div className="mt-4 space-y-4 text-sm leading-relaxed text-ink">
               <p>
                 Hobby Helper was born from my own experience of coming home
-                tired after work or classes, wanting to do something meaningful
-                — but defaulting to scrolling and comfort shows. My research
-                among young adults (20–35) confirmed this pattern: people
-                aren&apos;t short on free time, they&apos;re short on mental
-                energy, ideas and that tiny nudge to start.
+                tired after work or classes, but still wanting to do something
+                meaningful instead of defaulting to scrolling and comfort shows.
+                My research among young adults (20–35) confirmed this pattern:
+                people aren&apos;t short on free time, they&apos;re short on
+                mental energy, ideas and that tiny nudge to start.
               </p>
               <p>
-                Through surveys, academic research and interviews I mapped
+                Through surveys, academic research and interviews I found
                 barriers like decision overload, fear of &quot;wasting
                 time&quot;, financial concerns and the pressure to make every
                 hour productive. Users didn&apos;t need a new productivity
-                tracker; they needed a soft, supportive tool that says:
+                tracker, they needed a soft, supportive tool that says:
                 <strong>
                   {" "}
-                  “here are three kind options — pick one and go play.”
+                  “hey! here are three hobbies you could do, go ahead and pick
+                  one and go play.”
                 </strong>
               </p>
               <p>
-                Hobby Helper lets users indicate how much time they have and
+                Hobby Helper lets users indicate what mood they&apos;re in and
                 what kind of activity they&apos;re open to. The app responds
                 with a small, curated set of beginner-friendly hobbies with
-                concrete first steps, often pointing to local or low-cost
-                options. No streaks, points or FOMO — just calm guidance.
+                concrete first steps No streaks, points or gamification just
+                calm guidance.
               </p>
             </div>
           </div>
@@ -207,8 +211,8 @@ export default function HobbyHelperDetail() {
                 reduces decision fatigue and keeps the experience light.
               </li>
               <li>
-                <strong>Warm visual language:</strong> soft waves, marigold and
-                minty tones, and rounded shapes to create a &quot;hobby
+                <strong>Warm visual language:</strong> soft curves, right orange
+                and minty tones, and rounded shapes to create a &quot;hobby
                 nook&quot; feeling.
               </li>
               <li>
@@ -261,7 +265,7 @@ export default function HobbyHelperDetail() {
           <div className="wave-card flex items-center gap-3 rounded-3xl p-4">
             <div className="rounded-2xl overflow-hidden border border-blood/40 bg-paper/80 p-2">
               <img
-                src="/hobbyhelper/qrcode.png"
+                src="/hobbyhelper/hobbyHelperBuild-1311.png"
                 alt="QR code linking to the latest Hobby Helper Expo Go build"
                 className="w-24 h-24 object-contain"
               />
@@ -273,7 +277,7 @@ export default function HobbyHelperDetail() {
                 your phone.
               </p>
               <a
-                href="/hobbyhelper/qrcode.png"
+                href="https://expo.dev/accounts/charsie/projects/frontend/builds/e909dac7-8dc6-4a4e-b2a6-03b12665efd3"
                 className="mt-2 inline-block link-underline"
               >
                 Or tap here on mobile →
