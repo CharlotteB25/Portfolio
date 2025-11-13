@@ -103,16 +103,16 @@ export default function HobbyHelperDetail() {
             </p>
 
             <div className="mt-5 flex flex-wrap gap-3 items-center text-[10px] md:text-xs">
-              <span className="uppercase tracking-wide px-3 py-1 rounded-full border border-blood text-ink-700">
+              <span className="uppercase tracking-wide px-3 py-1 rounded-full border border-marigold text-ink-700">
                 {project.period}
               </span>
-              <span className="uppercase tracking-wide px-3 py-1 rounded-full border border-blood text-ink-700">
+              <span className="uppercase tracking-wide px-3 py-1 rounded-full border border-marigold text-ink-700">
                 {project.role}
               </span>
-              <span className="uppercase tracking-wide px-3 py-1 rounded-full border border-blood text-ink-700">
+              <span className="uppercase tracking-wide px-3 py-1 rounded-full border border-marigold text-ink-700">
                 {project.location}
               </span>
-              <span className="uppercase tracking-wide px-3 py-1 rounded-full border border-blood text-ink-700">
+              <span className="uppercase tracking-wide px-3 py-1 rounded-full border border-marigold text-ink-700">
                 {project.status}
               </span>
             </div>
