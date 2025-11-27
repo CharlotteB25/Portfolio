@@ -80,7 +80,7 @@ export default function Home() {
 
           {/* RIGHT — Fun fact card */}
           <aside className="xl:w-[30%] mt-10 xl:mt-0 xl:sticky xl:top-28">
-            <div className="wave-card p-6 rounded-3xl border border-marigold/70">
+            <div className="wave-card p-6 rounded-3xl">
               <p className="text-ink-800 font-semibold">
                 Currently open to exciting opportunities in web development and
                 refining my UI and design craft.
