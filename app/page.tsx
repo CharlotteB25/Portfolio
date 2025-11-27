@@ -291,25 +291,6 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-
-              <div className="mt-4 flex flex-wrap gap-2 text-xs">
-                {[
-                  "Human-centered design",
-                  "Intuitive interfaces",
-                  "Accessibility first",
-                  "Micro-interactions",
-                  "Design systems",
-                  "Prototyping",
-                  "Responsive layouts",
-                ].map((b) => (
-                  <span
-                    key={b}
-                    className="px-2.5 py-1 rounded-full border border-marigold/40 text-marigold/75"
-                  >
-                    {b}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
 
