@@ -4,7 +4,6 @@ import Link from "next/link";
 import { getProjects } from "@/lib/projects";
 import { ProjectCard } from "@/components/ProjectCard";
 import { useEffect, useState } from "react";
-import { Analytics } from "@vercel/analytics/next";
 
 export default function Home() {
   const projects = getProjects().slice(0, 6);
@@ -376,7 +375,6 @@ export default function Home() {
           </a>
         </div>
       </section>
-      <Analytics />
     </main>
   );
 }

@@ -37,7 +37,7 @@ export default function ContactPage() {
               Email me
             </a>
             <a
-              href="https://www.linkedin.com/in/charlottebilliet/"
+              href="https://www.linkedin.com/in/charlotte-billiet-740814222/"
               target="_blank"
               rel="noopener noreferrer"
               className="btn px-6 py-3"
@@ -46,7 +46,7 @@ export default function ContactPage() {
               LinkedIn
             </a>
             <a
-              href="https://github.com/charlottebilliet"
+              href="https://github.com/CharlotteB25"
               target="_blank"
               rel="noopener noreferrer"
               className="btn px-6 py-3"

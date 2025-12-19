@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Portfolio - Charlotte Billiet",
@@ -32,6 +33,7 @@ export default function RootLayout({
         </main>
         <Footer />
       </body>
+      <Analytics />
     </html>
   );
 }
