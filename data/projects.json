@@ -89,5 +89,22 @@
     ],
     "demo": "/projects/hobbyhelper",
     "repo": "https://github.com/CharlotteB25/personal-portfolio"
+  },
+  {
+    "title": "A11Y scanner",
+    "year": 2026,
+    "summary": "A web accessibility scanner that analyzes websites for compliance with WCAG guidelines, providing detailed reports and suggestions for improvements.",
+    "tags": [
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "React",
+      "WCAG",
+      "Accessibility",
+      "Playwright",
+      "Axe-core"
+    ],
+    "demo": "https://a11y-scanner-hn3w.onrender.com/",
+    "repo": "https://github.com/CharlotteB25/A11Y-scanner"
   }
 ]
