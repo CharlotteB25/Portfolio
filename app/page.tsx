@@ -183,7 +183,7 @@ export default function Home() {
         <div className="flex items-end justify-between">
           <h2 className=" text-3xl text-ink-700 mt-10">Résumé Snapshot</h2>
           <a
-            href="/CV/Resume-CharlotteBilliet - Fullstack.pdf"
+            href="/CV/Resume-CharlotteBilliet_developer.pdf"
             className="btn btn-ghost btn-sm"
             aria-label="Download résumé as PDF"
           >
@@ -214,7 +214,8 @@ export default function Home() {
                 </li>
               </ul>
               <div className="mt-6 text-xs text-pearl-900 italic">
-                Focus: Web development, UX/UI, prototyping.
+                Focus: Fullstack development, UX/UI design, project management,
+                Frontend development.
               </div>
             </div>
           </div>
@@ -339,6 +340,19 @@ export default function Home() {
                     <p className="text-ink-900 mt-1">
                       Customer service and responsibility in a client-facing
                       role.
+                    </p>
+                  </div>
+                </li>
+                <li className="relative">
+                  <span className="absolute -left-4 top-1.5 h-2.5 w-2.5 rounded-full bg-marigold" />
+                  <div className="text-sm">
+                    <div className="font-semibold text-ink-700 mb-1">
+                      Content Creator • Leie Auto's
+                    </div>
+                    <div className="text-marigold">Dec 2025 - Present</div>
+                    <p className="text-ink-900 mt-1">
+                      Creating engaging social media content to enhance brand
+                      presence and connect with the audience.
                     </p>
                   </div>
                 </li>
