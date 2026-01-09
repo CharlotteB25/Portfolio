@@ -75,7 +75,7 @@
   },
   {
     "title": "Hobby Helper App",
-    "year": 2023,
+    "year": 2025,
     "summary": "Cross-platform mobile app built with React Native and Expo to help users discover, track, and organize hobbies. Includes Node.js backend and MongoDB database.",
     "tags": [
       "React Native",
