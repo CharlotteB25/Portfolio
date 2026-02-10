@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(
       () => setIndex((i) => (i + 1) % words.length),
-      2500
+      2500,
     );
     return () => clearInterval(interval);
   }, []);
@@ -165,10 +165,10 @@ export default function Home() {
                 i === 0
                   ? "lg:col-span-7"
                   : i === 1
-                  ? "lg:col-span-5"
-                  : i === 2
-                  ? "lg:col-span-5"
-                  : "lg:col-span-7"
+                    ? "lg:col-span-5"
+                    : i === 2
+                      ? "lg:col-span-5"
+                      : "lg:col-span-7"
               }
             >
               <div className="rounded-2xl overflow-hidden border-marigold">
@@ -303,6 +303,19 @@ export default function Home() {
                   <span className="absolute -left-4 top-1.5 h-2.5 w-2.5 rounded-full bg-marigold" />
                   <div className="text-sm">
                     <div className="font-semibold text-ink-700 mb-1">
+                      Content Creator • Leie Auto's
+                    </div>
+                    <div className="text-marigold">Dec 2025 - Present</div>
+                    <p className="text-ink-900 mt-1">
+                      Creating engaging social media content to enhance brand
+                      presence and connect with the audience.
+                    </p>
+                  </div>
+                </li>
+                <li className="relative">
+                  <span className="absolute -left-4 top-1.5 h-2.5 w-2.5 rounded-full bg-marigold" />
+                  <div className="text-sm">
+                    <div className="font-semibold text-ink-700 mb-1">
                       Web Development Intern • Dirty Roots (Ecommerce)
                     </div>
                     <div className="text-marigold">
@@ -340,19 +353,6 @@ export default function Home() {
                     <p className="text-ink-900 mt-1">
                       Customer service and responsibility in a client-facing
                       role.
-                    </p>
-                  </div>
-                </li>
-                <li className="relative">
-                  <span className="absolute -left-4 top-1.5 h-2.5 w-2.5 rounded-full bg-marigold" />
-                  <div className="text-sm">
-                    <div className="font-semibold text-ink-700 mb-1">
-                      Content Creator • Leie Auto's
-                    </div>
-                    <div className="text-marigold">Dec 2025 - Present</div>
-                    <p className="text-ink-900 mt-1">
-                      Creating engaging social media content to enhance brand
-                      presence and connect with the audience.
                     </p>
                   </div>
                 </li>

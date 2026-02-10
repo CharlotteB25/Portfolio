@@ -5,7 +5,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <section className="section py-12 space-y-10">
-      {/* Header (matches Projects/Home style) */}
+      {/* Header same on all major pages */}
       <div className="flex flex-col items-center text-center gap-4">
         <h1 className="title text-[clamp(2.25rem,6vw,3.5rem)] leading-tight text-ink-700">
           Let’s make something together.
@@ -55,15 +55,6 @@ export default function ContactPage() {
               GitHub
             </a>
           </div>
-
-          {/* Divider */}
-          <hr className="w-2/3 border-marigold/30" />
-
-          {/* Quote (well-known, clean) */}
-          <p className="text-sm text-pearl-900 italic">
-            "You can't use up creativity. The more you use, the more you have."
-            — Maya Angelou
-          </p>
         </div>
       </div>
     </section>

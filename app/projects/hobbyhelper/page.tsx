@@ -122,7 +122,7 @@ export default function HobbyHelperDetail() {
               <a
                 href={EXPO_URL}
                 className={cx(
-                  "btn btn-primary inline-flex items-center rounded-xl px-4 py-2 text-sm font-semibold gap-2"
+                  "btn btn-primary inline-flex items-center rounded-xl px-4 py-2 text-sm font-semibold gap-2",
                 )}
               >
                 Open in Expo Go
@@ -323,8 +323,7 @@ export default function HobbyHelperDetail() {
       <footer className="section pb-24 text-xs opacity-70">
         <p>
           Built as my final bachelor project in Grafische &amp; Digitale Media –
-          New Media Development. I’m happy to walk through the research and
-          prototype live during a portfolio review.
+          New Media Development.
         </p>
       </footer>
     </main>

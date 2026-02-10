@@ -2,11 +2,11 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
-// ------------ Utilities ------------
+// conditional class names helper
 const cx = (...classes: Array<string | false | undefined | null>) =>
   classes.filter(Boolean).join(" ");
 
-// ------------ CodeSnippet ------------
+// code snippet with copy button and label
 function CodeSnippet({
   code,
   language = "ts",
@@ -53,7 +53,7 @@ function CodeSnippet({
           onClick={copy}
           className={cx(
             "btn btn-primary rounded-xl px-3 py-1 text-xs font-semibold",
-            copied && "opacity-90"
+            copied && "opacity-90",
           )}
           aria-live="polite"
         >
@@ -70,7 +70,7 @@ function CodeSnippet({
   );
 }
 
-// ------------ Collapsible Code Wrapper ------------
+// collapsible code section with title and copyable code snippet inside
 function CollapsibleCode({
   title,
   code,
@@ -102,7 +102,7 @@ function CollapsibleCode({
         <span
           className={cx(
             "ml-3 inline-flex h-6 w-6 items-center justify-center rounded-full border border-blood text-[10px] transition-transform",
-            open ? "rotate-90" : ""
+            open ? "rotate-90" : "",
           )}
         >
           ▶
@@ -117,7 +117,7 @@ function CollapsibleCode({
   );
 }
 
-// ------------ Lightbox ------------
+// popup lightbox for images, want to edit to have them centered when clicked on
 function Lightbox({
   src,
   alt,
@@ -160,7 +160,7 @@ function Lightbox({
   );
 }
 
-// ------------ Gallery ------------
+// images with lightbox on click
 function Gallery({
   images,
 }: {
@@ -197,14 +197,14 @@ function Gallery({
   );
 }
 
-// ------------ Badge ------------
+// Not in use
 const Badge = ({ children }: { children: React.ReactNode }) => (
   <span className="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium mr-2 mb-2 text-police bg-paper/70">
     {children}
   </span>
 );
 
-// ------------ JSON-LD ------------
+// JSON-LD structured data for SEO and rich results, currently not in use but want to add to have better search visibility for project pages. Need to add to main page component and pass in relevant data (title, description, highlights) to be rendered as a script tag in the head.
 function JsonLd({ data }: { data: Record<string, any> }) {
   const json = useMemo(() => JSON.stringify(data), [data]);
   return (
@@ -215,7 +215,7 @@ function JsonLd({ data }: { data: Record<string, any> }) {
   );
 }
 
-// ------------ Main Page ------------
+// content
 export default function ProjectDetailWOT() {
   const project = {
     title: "Operation Neptune – IoT Escape Game",
@@ -266,6 +266,7 @@ export default function ProjectDetailWOT() {
       alt: "Torpedo launch box with three potentiometers",
     },
   ];
+  //code snippet in collapsible section
 
   const sampleSnippet = `# Raspberry Pi MQTT logic for Challenge 5 (Torpedo Launch)
 import time
@@ -436,12 +437,12 @@ void loop() {
     creator: { "@type": "Person", name: "Charlotte Billiet" },
     about: highlights,
   };
-
+  //visual layout
   return (
     <main className="min-h-screen">
+      {/*SEO search helper hook*/}
       <JsonLd data={jsonLd} />
 
-      {/* Hero */}
       <section className="section pt-16 pb-10 md:pt-24 md:pb-14">
         <a
           href="/projects"
@@ -486,7 +487,7 @@ void loop() {
       <section className="section grid md:grid-cols-3 gap-8 pb-20">
         {/* Left column */}
         <div className="md:col-span-2 space-y-8">
-          {/* Gallery */}
+          {/* images */}
           <div>
             <h2 className="text-xl font-bold mb-3">Gallery</h2>
             <p className="text-sm mb-4 text-ink-700">
@@ -495,7 +496,7 @@ void loop() {
             <Gallery images={images} />
           </div>
 
-          {/* Problem / Solution */}
+          {/* card section */}
           <div className="wave-card p-6">
             <h3 className="text-lg font-semibold">Problem → Solution</h3>
             <div className="mt-4 space-y-4 text-sm leading-relaxed text-ink">
@@ -525,7 +526,7 @@ void loop() {
             </div>
           </div>
 
-          {/* What I learned */}
+          {/* What I learned card section */}
           <div className="wave-card p-6">
             <h3 className="text-lg font-semibold">What I learned</h3>
             <ul className="mt-4 grid gap-2 text-sm list-disc pl-5 text-ink">
@@ -560,7 +561,7 @@ void loop() {
             </ul>
           </div>
 
-          {/* Challenge overview */}
+          {/* Challenge overview card section */}
           <div className="wave-card p-6">
             <h3 className="text-lg font-semibold">Challenge structure</h3>
             <ol className="mt-4 space-y-3 text-sm text-ink list-decimal list-inside">
@@ -593,7 +594,7 @@ void loop() {
 
         {/* Right column */}
         <aside className="md:col-span-1 space-y-8">
-          {/* Quick facts */}
+          {/* Quick facts tags */}
           <div className="wave-card p-6 text-sm text-ink">
             <h3 className="font-semibold mb-4">Quick facts</h3>
             <dl className="grid grid-cols-3 gap-2">
@@ -618,7 +619,7 @@ void loop() {
             </dl>
           </div>
 
-          {/* My contributions */}
+          {/* My contributions card section */}
           <div className="wave-card p-6 text-sm text-ink">
             <h3 className="font-semibold mb-2">My contributions</h3>
             <ul className="list-disc pl-5 mt-2 space-y-2">
@@ -665,9 +666,13 @@ void loop() {
           Technical appendix (Challenge 5 – Torpedo Launch)
         </h2>
         <p className="text-xs text-ink-700 max-w-3xl">
-          For reviewers who want to dive into the implementation details, here’s
-          how the Raspberry&nbsp;Pi, Arduino&nbsp;Leonardo, potentiometers and
-          MQTT work together to drive the final challenge.
+          Below are code snippets from the Raspberry Pi and Arduino Leonardo
+          powering the final challenge. The Pi listens for MQTT signals to start
+          the challenge, reads potentiometer and button states from the Arduino
+          over serial, and publishes a "solved" message when the correct
+          conditions are met. The Arduino reads three potentiometers and a
+          button, sending their states to the Pi and controlling an LED based on
+          the Pi's commands.
         </p>
         <div className="grid gap-4 md:grid-cols-2">
           <CollapsibleCode
@@ -682,14 +687,6 @@ void loop() {
           />
         </div>
       </section>
-
-      {/* Footer hint */}
-      <footer className="section pb-24 text-xs opacity-70">
-        <p>
-          Optional: embed a short demo video of the game flow here for extra
-          context.
-        </p>
-      </footer>
     </main>
   );
 }
