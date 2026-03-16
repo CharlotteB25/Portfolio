@@ -29,7 +29,7 @@ export default function Home() {
        */}{" "}
       <section className="section relative isolate">
         <div className="flex flex-col xl:flex-row xl:items-start xl:gap-10">
-          {/* LEFT — Hero text */}
+          {/* left side — Hero text */}
           <div className="flex-1 text-center xl:text-left">
             <h1
               className="
@@ -93,7 +93,7 @@ export default function Home() {
                   <div className="text-ink-800 font-semibold mb-2">
                     Location
                   </div>
-                  <div>Ghent, Belgium | Remote</div>
+                  <div>Ghent, Belgium</div>
                 </div>
               </div>
             </div>
