@@ -183,7 +183,7 @@ export default function Home() {
         <div className="flex items-end justify-between">
           <h2 className=" text-3xl text-ink-700 mt-10">Résumé Snapshot</h2>
           <a
-            href="/CV/Resume-CharlotteBilliet_developer.pdf"
+            href="/CV/fullstackdeveloperResumeYellow.pdf"
             className="btn btn-ghost btn-sm"
             aria-label="Download résumé as PDF"
           >
